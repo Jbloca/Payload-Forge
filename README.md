@@ -50,7 +50,15 @@ Ideal para pentesters y entusiastas de la ciberseguridad que desean automatizar 
   * `./payloadForge.py list-payloads` Listar todos los payloads disponibles.
   * `./payloadForge.py list-bypasses` Listar todos los bypasses disponibles.
 
-## 📸 Captura de Pantalla
+---
+
+## Capturas de Pantalla 📷
+
+| Configuración del Escaneo | Progreso del Escaneo | Resultados Generales |
+|---------------------------|-----------------------|-----------------------|
+| ![Setup](results/screenshots/scan-setup.png) | ![Progress](results/screenshots/scan-progress.png) | ![Results](results/screenshots/scan-results.png) |
+
+---
   
 ## Contribuciones
   ¡Pull requests y sugerencias son bienvenidos!
@@ -58,7 +66,7 @@ Ideal para pentesters y entusiastas de la ciberseguridad que desean automatizar 
 
 ## 👨‍💻 Autor
   Desarrollado por Jorge Balarezo Cardenas
-🔗 LinkedIn • 🧑‍💻 Hacker Ético Junior • 🇵🇪 Perú
+🔗 LinkedIn [Enlace a mi perfil](https://www.linkedin.com/in/jorge-balarezo-cardenas/)  • 🧑‍💻 Hacker Ético Junior • 🇵🇪 Perú
 
 ## 📄 Licencia
 Este proyecto está bajo la licencia MIT.
