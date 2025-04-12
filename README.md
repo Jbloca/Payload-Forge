@@ -66,7 +66,7 @@ Ideal para pentesters y entusiastas de la ciberseguridad que desean automatizar 
 
 ## 👨‍💻 Autor
   Desarrollado por Jorge Balarezo Cardenas
-🔗 LinkedIn [Enlace a mi perfil](https://www.linkedin.com/in/jorge-balarezo-cardenas/)  • 🧑‍💻 Hacker Ético Junior • 🇵🇪 Perú
+  [🔗 LinkedIn](https://www.linkedin.com/in/jorge-balarezo-cardenas/)  • 🧑‍💻 Hacker Ético Junior • 🇵🇪 Perú
 
 ## 📄 Licencia
 Este proyecto está bajo la licencia MIT.
