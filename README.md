@@ -43,12 +43,12 @@ Ideal para pentesters y entusiastas de la ciberseguridad que desean automatizar 
     cd PayloadForge
     
 ## Coamdno de Uso
-   ./payloadForge.py generate #Genera un payload de forma interactiva.
-   ./payloadForge.py generate --analyze --simulate #Generar, analizar y simular un payload.
-   ./payloadForge.py generate --save-as ataqueSQL.json #Guarda tu configuracion actual.
-   ./payloadForge.py generate --load-from ataqueSQL.json #Cargar una configuracion guardada previamente.
-   ./payloadForge.py list-payloads #Listar todos los payloads disponibles.
-   ./payloadForge.py list-bypasses #Listar todos los bypasses disponibles.
+  `./payloadForge.py generate` #Genera un payload de forma interactiva.
+     ./payloadForge.py generate --analyze --simulate #Generar, analizar y simular un payload.
+     ./payloadForge.py generate --save-as ataqueSQL.json #Guarda tu configuracion actual.
+     ./payloadForge.py generate --load-from ataqueSQL.json #Cargar una configuracion guardada previamente.
+     ./payloadForge.py list-payloads #Listar todos los payloads disponibles.
+     ./payloadForge.py list-bypasses #Listar todos los bypasses disponibles.
 
 ## 📸 Captura de Pantalla
   
