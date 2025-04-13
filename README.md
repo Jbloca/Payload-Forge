@@ -54,10 +54,9 @@ Ideal para pentesters y entusiastas de la ciberseguridad que desean automatizar 
 
 ## Capturas de Pantalla 📷
 
-| Configuración del Escaneo | Progreso del Escaneo | Resultados Generales |
-|---------------------------|-----------------------|-----------------------|
-| ![Setup](results/screenshots/scan-setup.png) | ![Progress](results/screenshots/scan-progress.png) | ![Results](results/screenshots/scan-results.png) |
-
+| Interfaz --Help | Interfaz Generate Payload |
+|---------------------------|-----------------------|
+| ![Interfaz --help](imagen/Viewhelp.png) | ![Generate Payload](imagen/generadorPayload.png) |
 ---
   
 ## Contribuciones
@@ -67,6 +66,9 @@ Ideal para pentesters y entusiastas de la ciberseguridad que desean automatizar 
 ## 👨‍💻 Autor
   Desarrollado por Jorge Balarezo Cardenas
   [🔗 LinkedIn](https://www.linkedin.com/in/jorge-balarezo-cardenas/)  • 🧑‍💻 Hacker Ético Junior • 🇵🇪 Perú
+
+## Advertencia
+PayloadForge está diseñado únicamente para fines educativos y de pruebas de seguridad en entornos controlados. No utilices esta herramienta en sistemas sin autorización explícita. El uso indebido de esta herramienta es responsabilidad exclusiva del usuario.
 
 ## 📄 Licencia
 Este proyecto está bajo la licencia MIT.
