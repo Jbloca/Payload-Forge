@@ -1,6 +1,6 @@
 # 🔥 PayloadForge – Generador de Payloads Ofensivos para Pentesters
 
-**PayloadForge** es una herramienta interactiva de línea de comandos (CLI) diseñada para generar payloads personalizados orientados a pruebas de penetración.  
+**PayloadForge** es una script interactiva de línea de comandos (CLI) diseñada para generar payloads personalizados orientados a pruebas de penetración.  
 Ideal para pentesters y entusiastas de la ciberseguridad que desean automatizar la creación de payloads ofensivos y aplicar técnicas de evasión (bypasses) para pruebas en aplicaciones web.
 
 ---
